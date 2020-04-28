@@ -13,6 +13,13 @@ class EntryController extends Controller
         return response()->json(Entry::get());
     }
 
+    public function edit(Request $request, $id) 
+    {
+        $entry = Entry::find($id);
+        
+        return response()->json($entry);
+    }
+
     public function create(StoreEntry $request)
     {
         $validated = $request->validated();
